@@ -3,22 +3,20 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Home from "../screens/Home";
-import { LocationsProvider } from "../context/LocationsContext";
-import { CityProvider } from "../context/CitiesContext";
+import CreateCity from "../screens/Create/CreateCity";
+import CreateLocation from "../screens/Create/CreateLocation";
 
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
   return (
-    <LocationsProvider>
-      <CityProvider>
-        <NavigationContainer>
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </CityProvider>
-    </LocationsProvider>
+    <NavigationContainer>
+      <Stack.Navigator headerMode="none" initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="CreateCity" component={CreateCity} />
+        <Stack.Screen name="CreateLocation" component={CreateLocation} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

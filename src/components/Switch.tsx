@@ -9,8 +9,6 @@ import {
 } from "react-native";
 import { ms } from "react-native-size-matters";
 
-// import { Container } from './styles';
-
 const { width } = Dimensions.get("screen");
 
 type Props = {
@@ -37,7 +35,7 @@ const Switch: React.FC<Props> = ({ a, b, functionA, functionB, state }) => {
     if (state === "cities") {
       pos !== new Animated.Value(0) ? toogle(0) : pos;
     } else {
-      pos !== new Animated.Value(width / 4) ? toogle(width / 4) : pos;
+      pos !== new Animated.Value(width * 0.4) ? toogle(width * 0.4) : pos;
     }
   }, [state]);
 
@@ -63,7 +61,7 @@ const Switch: React.FC<Props> = ({ a, b, functionA, functionB, state }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            toogle(width / 4);
+            toogle(width * 0.4);
             functionB();
           }}
           hitSlop={{ left: 10, right: 10, top: 10, bottom: 10 }}
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "rgba(255, 255, 255, 0.3)",
     height: ms(40),
-    width: width / 2,
+    width: width * 0.8,
     borderRadius: ms(8),
     marginTop: ms(10),
   },
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     height: ms(40),
-    width: width / 2,
+    width: width * 0.8,
     position: "absolute",
     alignSelf: "center",
     flexDirection: "row",

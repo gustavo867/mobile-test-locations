@@ -5,7 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function useStorage<T = { name: string; country: string }>(key: string) {
   const [data, setData] = useState<T | undefined>(undefined);

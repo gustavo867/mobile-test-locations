@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import AsyncStorage from "@react-native-community/async-storage";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useStorage } from "../hooks/useStorage";
 
 export interface Locations {
